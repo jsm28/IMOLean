@@ -30,8 +30,8 @@ structure NordicSquare.UphillPath {n : ℕ} (ns : NordicSquare n) where
   cells : List (Cell n)
   nonempty : cells ≠ []
   first_valley : ns.Valley (cells.head nonempty)
-  adjacent : cells.Chain' Adjacent
-  increasing : cells.Chain' fun x y ↦ (ns x : ℕ) < (ns y : ℕ)
+  adjacent : cells.IsChain Adjacent
+  increasing : cells.IsChain fun x y ↦ (ns x : ℕ) < (ns y : ℕ)
 
 /-- The answer to be determined. -/
 def answer : ℕ+ → ℕ := sorry

@@ -33,7 +33,7 @@ structure Path where
   nonempty : cells ≠ []
   head_first_row : (cells.head nonempty).1 = 0
   last_last_row : (cells.getLast nonempty).1 = ⟨2023, by decide⟩
-  valid_move_seq : cells.Chain' Adjacent
+  valid_move_seq : cells.IsChain Adjacent
 
 /-- The first monster on a path, or `none`. -/
 noncomputable def Path.firstMonster (p : Path) (m : MonsterData) : Option Cell :=

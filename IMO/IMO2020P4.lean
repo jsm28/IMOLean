@@ -29,7 +29,7 @@ structure Company.linkage {n k : ℕ} (c : Company n k) : Type where
   /-- The sequence of cars used. -/
   cars : List (Fin k)
   nonempty : cars ≠ []
-  valid : cars.Chain' fun i j ↦ (c.cars i).finish = (c.cars j).start
+  valid : cars.IsChain fun i j ↦ (c.cars i).finish = (c.cars j).start
 
 /-- The first station in a linkage. -/
 def Company.linkage.start {n k : ℕ} {c : Company n k} (x : c.linkage) : Fin (n ^ 2) :=
