@@ -22,18 +22,19 @@ statements here may also be of use for projects such as
 important to check statements carefully and report any mistakes, given
 the high risk of making mistakes in formal statements when those
 statements are not validated by writing a formal solution based on a
-human solution.
+human solution.  There are many [common
+pitfalls](https://leanprover-community.github.io/extras/pitfalls.html)
+to consider when writing Lean.
 
 The conventions here draw on my experience with formalizing some past
 problem statements and solutions, including both formalizations of IMO
 problems with solutions for the mathlib archive, and formalizations of
-statements of all the non-geometry IMO 2024 shortlist problems (with
+statements of [all the non-geometry IMO 2024 shortlist
+problems](https://github.com/jsm28/IMOShortlist2024Lean) (with
 solutions in only a handful of cases) ahead of that IMO while chairing
-the Problem Selection Committee (those formalizations might be
-released when the IMO 2024 shortlist is no longer confidential after
-IMO 2025).  However, those past formalizations do not necessarily
-follow these conventions, both because my views on appropriate
-conventions evolved based on the experience writing those
+the Problem Selection Committee.  However, those past formalizations
+do not necessarily follow these conventions, both because my views on
+appropriate conventions evolved based on the experience writing those
 formalizations, and because of cases where appropriate conventions in
 the context of a solution seem different from appropriate conventions
 for a problem stated on its own (for potential use as a challenge by
@@ -564,6 +565,13 @@ Coprimality uses `Nat.Coprime`.  If all the (positive) divisors of a
 positive integer are needed, use `Nat.divisors`; `Nat.primeFactors`,
 `Nat.primeFactorsList` and `Nat.factorization` may be used when a
 factorization is needed in a different form.
+
+Statements about digits of a natural number use `Nat.digits` even for
+statements about the final digits (such as IMO 1978 P1) or the number
+of digits that might be mathematically more natural to reason about in
+a form expressed with modular arithmetic or inequalities.  Note that
+`Nat.digits` returns an empty list for `0`, unlike informal
+convention.
 
 To assert that a number in one type can be expressed in another type
 (for example, that a real number is rational), use constructs such as
