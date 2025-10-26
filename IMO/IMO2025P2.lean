@@ -19,14 +19,14 @@ theorem result {M N A B C D P E F H : Pt} {Ω Γ : Sphere Pt} (Ω_center_eq_M : 
     (A_mem_inter : A ∈ (Ω ∩ Γ : Set Pt)) (B_mem_inter : B ∈ (Ω ∩ Γ : Set Pt)) (A_ne_B : A ≠ B)
     (M_ne_N : M ≠ N) (C_mem_inter : C ∈ (line[ℝ, M, N] ∩ Ω : Set Pt))
     (D_mem_inter : D ∈ (line[ℝ, M, N] ∩ Γ : Set Pt)) (sbtw_C_M_N_D : [C, M, N, D].Sbtw ℝ)
-    (affine_independent_ACD : AffineIndependent ℝ ![A, C, D])
-    (P_eq_circumcenter : P = (⟨_, affine_independent_ACD⟩ : Triangle ℝ Pt).circumcenter)
+    (affineIndependent_ACD : AffineIndependent ℝ ![A, C, D])
+    (P_eq_circumcenter : P = (⟨_, affineIndependent_ACD⟩ : Triangle ℝ Pt).circumcenter)
     (E_mem_inter : E ∈ (line[ℝ, A, P] ∩ Ω : Set Pt)) (E_ne_A : E ≠ A)
     (F_mem_inter : F ∈ (line[ℝ, A, P] ∩ Γ : Set Pt)) (F_ne_A : F ≠ A)
-    (affine_independent_PMN : AffineIndependent ℝ ![P, M, N])
-    (H_eq_orthocenter : H = Triangle.orthocenter (⟨_, affine_independent_PMN⟩ : Triangle ℝ Pt)) :
-    ∃ affine_independent_BEF : AffineIndependent ℝ ![B, E, F],
-      (⟨_, affine_independent_BEF⟩ : Triangle ℝ Pt).circumsphere.IsTangent
+    (affineIndependent_PMN : AffineIndependent ℝ ![P, M, N])
+    (H_eq_orthocenter : H = Triangle.orthocenter (⟨_, affineIndependent_PMN⟩ : Triangle ℝ Pt)) :
+    ∃ affineIndependent_BEF : AffineIndependent ℝ ![B, E, F],
+      (⟨_, affineIndependent_BEF⟩ : Triangle ℝ Pt).circumsphere.IsTangent
         (AffineSubspace.mk' H line[ℝ, A, P].direction) := by
   sorry
 
