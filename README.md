@@ -757,6 +757,13 @@ example, the circumcenter), no hypothesis is needed that they are
 different.  A reference to a triangle is taken to mean a nondegenerate
 triangle.
 
+A reference to a circle is taken to mean one with positive radius (not
+included in the definition of `Sphere` in mathlib), but the implicit
+hypothesis on the radius can be omitted in cases where it is
+sufficiently obvious from the other hypotheses, such as when it is
+specified as a circumcircle, incircle or excircle of a triangle or
+when two distinct points are given on the circle.
+
 Where such references implying some form of nondegeneracy appear in
 the conclusion of a problem rather than as a hypothesis of the
 problem, the corresponding formal statement appears as part of the
