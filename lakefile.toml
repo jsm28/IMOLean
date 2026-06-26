@@ -7,6 +7,7 @@ relaxedAutoImplicit = false
 pp.unicode.fun = true
 pp.proofs.withType = false
 weak.linter.mathlibStandardSet = true
+linter.style.header = false
 
 [[require]]
 name = "mathlib"
