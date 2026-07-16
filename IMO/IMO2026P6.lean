@@ -8,8 +8,6 @@ import Mathlib
 
 namespace IMO2026P6
 
-notation "ℝ+" => Set.Ioi (0 : ℝ)
-
 theorem result {a : ℕ → ℕ} (one_lt : ∀ i, 1 < a i)
     (one_lt_gcd : ∀ n, IsLeast {m | a n < m ∧ ∀ i ≤ n, 1 < Nat.gcd m (a i)} (a (n + 1))) :
     ∃ (T L : ℕ), 0 < T ∧ 0 < L ∧ ∀ n, a (n + T) = a n + L := by
