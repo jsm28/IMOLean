@@ -13,6 +13,8 @@ namespace IMO2026P2
 variable {V P : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [MetricSpace P]
 variable [NormedAddTorsor V P] [Fact (finrank ℝ V = 2)]
 
+/-- The affine-independence hypotheses supply the nondegeneracy witnesses required to construct
+the triangles in the statement.  The notation `∠` denotes the undirected Euclidean angle. -/
 theorem result {A B C M N K L O : P} (affineIndependent_ABC : AffineIndependent ℝ ![A, B, C])
     (M_eq_midpoint_AB : M = midpoint ℝ A B) (N_eq_midpoint_AC : N = midpoint ℝ A C)
     (affineIndependent_BMC : AffineIndependent ℝ ![B, M, C])
