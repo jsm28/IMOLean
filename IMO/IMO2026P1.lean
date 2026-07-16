@@ -11,7 +11,8 @@ namespace IMO2026P1
 /-- Whether it is valid to move from `p₁` to `p₂`. -/
 def ValidMove (p₁ p₂ : Fin 2026 → ℕ) : Prop :=
   ∃ i j, i ≠ j ∧ 1 < p₁ i ∧ 1 < p₁ j ∧ (∀ k, k ≠ i → k ≠ j → p₂ k = p₁ k) ∧
-    p₂ i = Nat.gcd (p₁ i) (p₁ j) ∧ p₂ j = Nat.lcm (p₁ i) (p₁ j)
+    p₂ i = Nat.gcd (p₁ i) (p₁ j) ∧
+      p₂ j = Nat.lcm (p₁ i) (p₁ j) / Nat.gcd (p₁ i) (p₁ j)
 
 /-- Whether it is valid to move from `p₁` to `p₂`, or they are the same and there is no valid move
 from that position. -/
